@@ -1,0 +1,36 @@
+#footer {
+    background: none repeat scroll 0 0;
+    bottom:0;
+    display:block;
+    left:0;
+    position:fixed;
+    text-align:center;
+    width:100%;
+    z-index:999;
+    margin-bottom: 2px;
+    font-size: 10pt;
+}
+#footer a {
+  color: #777777;
+}
+
+#install_form .alert, #item_update_form .alert {
+  display: none;
+  text-align: center;
+}
+
+input.form-control.has-error {
+  background-image: linear-gradient(to bottom,#f2dede 0,#e7c3c3 100%);
+}
+
+.icon-pebble {
+  background-image: url("/images/pebble_icon_sm.png");
+  background-position: center center;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+iframe {
+  display: none;
+}
