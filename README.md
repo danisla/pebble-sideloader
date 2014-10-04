@@ -25,7 +25,7 @@ Run it locally with the command below or copy the source tree to your webserver.
     
     open http://localhost:8000
     
-Demo:
+## Demo
 
 ![pebble-sideloader-anim](https://cloud.githubusercontent.com/assets/323725/4515125/cdc841c0-4ba9-11e4-887d-44cfc52b7a1f.gif)
 
