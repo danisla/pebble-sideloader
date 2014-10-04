@@ -35,7 +35,7 @@ Run it locally with the command below or copy the source tree to your webserver.
 
 ## Contributing
 
-If you find this useful, please fork and create a pull request. Thanks!
+If you find this useful and want to make it better, please fork and create a pull request. Thanks!
 
 ## License
 
