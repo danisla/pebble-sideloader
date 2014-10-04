@@ -6,6 +6,10 @@ Uses libraries from [CloudPebble](https://github.com/pebble/cloudpebble/tree/mas
 
 ## Usage
 
+Clone the repo:
+
+    git clone https://github.com/danisla/pebble-sideloader.git
+
 Edit [apps.json](apps.json) with names and paths to your apps. You can add as many as you want.
 
     [
