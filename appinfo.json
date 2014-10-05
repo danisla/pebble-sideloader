@@ -1,0 +1,22 @@
+{
+    "appKeys": {
+        "message": 1,
+        "status": 0
+    },
+    "capabilities": [
+        "configurable"
+    ],
+    "companyName": "andrew.jazbec@gmail.com",
+    "longName": "App Sideloader",
+    "projectType": "native",
+    "resources": {
+        "media": []
+    },
+    "shortName": "App Sideloader",
+    "uuid": "12b2cd7d-bc6d-47c6-964e-0f249d62c70d",
+    "versionCode": 1,
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": false
+    }
+}
