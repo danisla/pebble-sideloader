@@ -2,12 +2,10 @@ $(document).ready((function(_this) {
   var setup = function() {
     var last_ip;
     var pbw_installer;
-    var iphone;
     var app_title;
     var pbw_url;
     var pbw_src;
-
-    iphone = navigator.userAgent.match("iPhone") != null;
+    var scanner;
 
     $('.pbw-install').on('click', function(e) {
       pbw_src = $(e.currentTarget).data('pbwSrc');
@@ -16,26 +14,15 @@ $(document).ready((function(_this) {
 
       pbw_installer = new PebbleInstall(pbw_src);
 
-      $('#ios_install_panel').hide();
+      $("#phone-ip").on('keyup', ip_change_handler);
+
+      $('#install_panel').show(function() {
+        $("#phone-ip").focus();
+      });
       $('#install_form .alert').hide();
       $('#modal_pebble_install').modal('show');
       $('.modal-header .modal-title').text(app_title);
-      $('#android_install_link').attr('href', pbw_url);
-      if (iphone) {
-        return $('#iphone_install_image').click();
-      }
       //e.preventDefault();
-    });
-
-    $('#iphone_install_image').on('click', function(e) {
-      e.preventDefault();
-      $("#device_install_links").show();
-      if (iphone) {
-        $("#device_install_links").hide();
-      }
-      return $('#ios_install_panel').fadeIn(function() {
-        $("#phone-ip").focus();
-      });
     });
 
     $('#install-on-phone-btn').on('click', function(e) {

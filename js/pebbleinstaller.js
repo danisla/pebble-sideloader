@@ -24,7 +24,7 @@
       } catch (_error) {
         e = _error;
         console.log(e);
-        dfd.reject("Error connecting to iPhone at: " + ip);
+        dfd.reject("Error connecting to phone at: " + ip);
         throw(e);
         return dfd.promise();
       }

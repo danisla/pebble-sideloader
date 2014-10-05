@@ -41,6 +41,7 @@
             if(mChildWindow) {
                 mChildWindow.postMessage({action: 'close'}, '*');
             }
+            if (mFrame) mFrame.remove();
         };
 
         this.send = function(data) {
