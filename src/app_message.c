@@ -32,20 +32,15 @@ static void menu_draw_header_callback(GContext* ctx, const Layer *cell_layer, ui
   }
 }
 
-// This is the menu item draw callback where you specify what each item should look like
 static void menu_draw_row_callback(GContext* ctx, const Layer *cell_layer, MenuIndex *cell_index, void *data) {
-  // Determine which section we're going to draw in
   switch (cell_index->section) {
     case 0:
-      // Use the row to specify which item we'll draw
       switch (cell_index->row) {
         case 0:
-          // This is a basic menu item with a title and subtitle
           menu_cell_basic_draw(ctx, cell_layer, "Basic Item", "", NULL);
           break;
 
         case 1:
-          // This is a basic menu item with a title and subtitle
           menu_cell_basic_draw(ctx, cell_layer, "Basic Item", "", NULL);
           break;
       }
@@ -63,17 +58,12 @@ void menu_select_callback(MenuLayer *menu_layer, MenuIndex *cell_index, void *da
     if(which == 1) {
     }
 }  
-  
-  
-  
-	
-// Key values for AppMessage Dictionary
+
 enum {
 	STATUS_KEY = 0,	
 	MESSAGE_KEY = 1
 };
 
-// Write message to buffer & send
 void send_message(void){
 	DictionaryIterator *iter;
 	
@@ -84,7 +74,6 @@ void send_message(void){
   	app_message_outbox_send();
 }
 
-// Called when a message is received from PebbleKitJS
 static void in_received_handler(DictionaryIterator *received, void *context) {
 	Tuple *tuple;
 	
@@ -98,11 +87,9 @@ static void in_received_handler(DictionaryIterator *received, void *context) {
 		APP_LOG(APP_LOG_LEVEL_DEBUG, "Received Message: %s", tuple->value->cstring);
 	}}
 
-// Called when an incoming message from PebbleKitJS is dropped
 static void in_dropped_handler(AppMessageResult reason, void *context) {	
 }
 
-// Called when PebbleKitJS does not acknowledge receipt of a message
 static void out_failed_handler(DictionaryIterator *failed, AppMessageResult reason, void *context) {
 }
 
@@ -123,17 +110,12 @@ void init(void) {
     .select_click = menu_select_callback,
   });
   
-  // Bind the menu layer's click config provider to the window for interactivity
   menu_layer_set_click_config_onto_window(menu_layer, window);
 
-  // Add it to the window for display
   layer_add_child(window_layer, menu_layer_get_layer(menu_layer));
   
-  //window_set_click_config_provider(window, click_config_provider);
-  
 	window_stack_push(window, true);
-	
-	// Register AppMessage handlers
+
 	app_message_register_inbox_received(in_received_handler); 
 	app_message_register_inbox_dropped(in_dropped_handler); 
 	app_message_register_outbox_failed(out_failed_handler);
