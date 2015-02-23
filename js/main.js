@@ -14,8 +14,6 @@ $(document).ready((function(_this) {
 
       pbw_installer = new PebbleInstall(pbw_src);
 
-      $("#phone-ip").on('keyup', ip_change_handler);
-
       $('#install_panel').show(function() {
         $("#phone-ip").focus();
       });
