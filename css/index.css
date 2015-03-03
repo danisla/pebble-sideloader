@@ -24,7 +24,6 @@ input.form-control.has-error {
 }
 
 .icon-pebble {
-  background-image: url("/images/pebble_icon_sm.png");
   background-position: center center;
   width: 16px;
   height: 16px;

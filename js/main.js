@@ -82,7 +82,7 @@ $(document).ready((function(_this) {
     return null;
   };
 
-  $.ajax("/apps.json").done(function(data) {
+  $.ajax("/apps/apps.json").done(function(data) {
     console.log("Loading "+data.length+" apps from apps.json");
 
     $.each(data, function(i) {
@@ -91,7 +91,7 @@ $(document).ready((function(_this) {
       var list_el = $('#app_list');
 
       // Add each app to the menu.
-      var li_el = '<li class="list-group-item"><a data-pbw-src="'+app.path+'" class="pbw-install" href="#'+basename+'"><img class="icon-pebble"></img>'+app.name+'</a></li>'
+      var li_el = '<li class="list-group-item"><a data-pbw-src="'+app.path+'" class="pbw-install" href="#'+basename+'"><img class="icon-pebble" src="/images/pebble_icon_sm.png"></img>'+app.name+'</a></li>'
       list_el.append(li_el);
     });
 
